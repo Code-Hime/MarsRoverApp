@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { ApodComponent } from './apod/apod.component';
+import { ApodDownloadComponent } from './apod/apod-dl.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    ApodComponent
+    ApodComponent,
+    ApodDownloadComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -23,7 +25,8 @@ import { ApodComponent } from './apod/apod.component';
     RouterModule.forRoot([
       { path: '', component: ApodComponent, pathMatch: 'full' },
       { path: 'apod', component: ApodComponent },
-      { path: 'home', component: HomeComponent }
+      { path: 'home', component: HomeComponent },
+      { path: 'download', component: ApodDownloadComponent }
     ])
   ],
   providers: [],

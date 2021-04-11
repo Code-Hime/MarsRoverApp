@@ -6,6 +6,11 @@
   <div *ngIf="apod">
     <h2>{{ apod.title }}</h2>
     <p>{{ apod.explanation }}</p>
-    <img style="max-width:100%;" src="{{ apod.url }}" />
+    <img *ngIf="apod.mediatype === 'image'; else videoBlock" style="max-width:100%;" src="{{ apod.url }}" />
+    <ng-template #videoBlock>
+      <iframe width="560" height="315" [src]='sanitizedUrl'>
+      </iframe>
+    </ng-template>
+
   </div>
 </div>
